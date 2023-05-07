@@ -20,3 +20,5 @@ api docs link --> odd-lime-lemming-ring.cyclic.app/api-docs
 #flow
 --> for creating a new user you have to run backend then it will be going to ask your name, after that city and then after country, after that it will create your an account in atlas after that bot is going to ask you to ask him anything write weather report then it will provide you weather report of you area.
 
+#botworking image
+![Screenshot (2709)](https://user-images.githubusercontent.com/112753795/236664944-512d26a5-aa16-449e-9822-2e4e36559751.png)

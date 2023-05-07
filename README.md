@@ -48,3 +48,7 @@ api docs link --> odd-lime-lemming-ring.cyclic.app/api-docs
 #api-docs
 
 ![Screenshot (2713)](https://user-images.githubusercontent.com/112753795/236665104-7cf301f7-c2ca-45ca-9318-d13a5d18163b.png)
+
+#data being saved in mongoAtlas
+![Screenshot (2717)](https://user-images.githubusercontent.com/112753795/236665322-0d7e6d80-bede-4a7c-a806-8a17958cfb1a.png)
+

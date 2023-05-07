@@ -7,10 +7,27 @@ const { connection } = require("./db");
 const { userRouter } = require("./routes/users.routes");
 require("dotenv").config();
 const cors = require("cors");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Api Documentation",
+      version: "1.0.0",
+    },
+  },
+  // *.js means select all the files present in the folder
+  apis: ["./routes/*.js"],
+};
+
+const specification = swaggerJsdoc(options);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specification));
 
 app.get("/", (req, res) => {
   res.json("welcome to HomePage");
@@ -108,12 +125,12 @@ process.once("SIGINT", () => bot.stop("SIGINT"));
 
 process.once("SIGTERM", () => bot.stop("SIGTERM"));
 
-app.listen(2000, async () => {
+app.listen(process.env.Port, async () => {
   try {
     await connection;
     console.log("Connected to Atlas Server...");
   } catch (error) {
     console.log(error.message);
   }
-  console.log("Server is running at port 2000...");
+  console.log(`Server is running at port ${process.env.Port}...`);
 });

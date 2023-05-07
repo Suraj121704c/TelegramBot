@@ -5,15 +5,18 @@ const { MongoClient } = require("mongodb");
 const axios = require("axios");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/users.routes");
+require("dotenv").config();
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json("welcome to HomePage");
 });
 
-const bot = new Telegraf("6171816776:AAHcBea6m2butZiSVEZXXg3HlduS6U8ISQA");
+const bot = new Telegraf(process.env.botToken);
 
 var a = 1;
 
@@ -45,9 +48,7 @@ bot.on(message("text"), async (ctx) => {
     }
     case 3: {
       user.country = ctx?.update?.message?.text;
-      const client = new MongoClient(
-        "mongodb+srv://suraj121704c:singh123@cluster0.ndbapyz.mongodb.net/botData?retryWrites=true&w=majority"
-      );
+      const client = new MongoClient(process.env.serverLink);
       try {
         await client.connect();
         const db = client.db();
@@ -63,9 +64,7 @@ bot.on(message("text"), async (ctx) => {
       break;
     }
     case 4: {
-      const client = new MongoClient(
-        "mongodb+srv://suraj121704c:singh123@cluster0.ndbapyz.mongodb.net/botData?retryWrites=true&w=majority"
-      );
+      const client = new MongoClient(process.env.serverLink);
       try {
         await client.connect();
         const db = client.db();
@@ -92,7 +91,7 @@ bot.on(message("text"), async (ctx) => {
 });
 
 async function getWeather(city, country) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=9f7150b3683b29830c9208107dd3952b&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.apiToken}&units=metric`;
   const response = await axios.get(url);
   const weather = response.data.weather[0].description;
   const temperature = response.data.main.temp;
@@ -116,5 +115,5 @@ app.listen(2000, async () => {
   } catch (error) {
     console.log(error.message);
   }
-  console.log("Server is running at port 8000...");
+  console.log("Server is running at port 2000...");
 });

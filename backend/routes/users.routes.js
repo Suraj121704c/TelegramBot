@@ -4,7 +4,11 @@ const { userModel } = require("../modules/users.modules");
 const userRouter = express.Router();
 
 userRouter.get("/", async (req, res) => {
-  const users = await userModel.find();
+  const filter = {};
+  if (req.query.name) {
+    filter.name = { $regex: req.query.name, $options: "i" };
+  }
+  const users = await userModel.find(filter);
   res.send(users);
 });
 

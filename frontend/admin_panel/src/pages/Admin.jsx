@@ -11,7 +11,7 @@ const Admin = () => {
 
   const hadleSearch = (q) => {
     axios
-      .get(`http://localhost:2000/users?name=${q}`)
+      .get(`https://odd-lime-lemming-ring.cyclic.app/users?name=${q}`)
       .then((res) => {
         setData(res.data);
       })
@@ -26,7 +26,7 @@ const Admin = () => {
 
   const handleDelte = (id) => {
     axios
-      .delete(`http://localhost:2000/users/delete/${id}`)
+      .delete(`https://odd-lime-lemming-ring.cyclic.app/users/delete/${id}`)
       .then((res) => {
         console.log(res);
         hadleSearch(q);

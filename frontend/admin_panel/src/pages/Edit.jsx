@@ -12,7 +12,7 @@ const Edit = () => {
 
   const handleData = () => {
     axios
-      .get(`http://localhost:2000/users/${params.id}`)
+      .get(`https://odd-lime-lemming-ring.cyclic.app/users/${params.id}`)
       .then((res) => {
         console.log(res.data[0]);
         setData(res.data[0]);
@@ -34,7 +34,7 @@ const Edit = () => {
       country,
     };
     axios
-      .patch(`http://localhost:2000/users/update/${params.id}`, userDetails)
+      .patch(`https://odd-lime-lemming-ring.cyclic.app/users/update/${params.id}`, userDetails)
       .then((res) => {
         console.log(res.data);
         {

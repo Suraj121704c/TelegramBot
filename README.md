@@ -22,3 +22,18 @@ api docs link --> odd-lime-lemming-ring.cyclic.app/api-docs
 
 #botworking image
 ![Screenshot (2709)](https://user-images.githubusercontent.com/112753795/236664944-512d26a5-aa16-449e-9822-2e4e36559751.png)
+
+#admin Login Page 
+![Screenshot (2714)](https://user-images.githubusercontent.com/112753795/236665022-073785cc-ddcb-4838-bddc-4236c99f1968.png)
+
+#admin Page 
+![Screenshot (2710)](https://user-images.githubusercontent.com/112753795/236665041-2cdef201-74a5-44cc-87c2-83b06b210b92.png)
+
+#admin with Search by name 
+![Screenshot (2711)](https://user-images.githubusercontent.com/112753795/236665062-bbdc1285-7cd1-45a1-931b-76cebd82e4be.png)
+
+#Admin Edit Page
+![Screenshot (2715)](https://user-images.githubusercontent.com/112753795/236665084-c673d377-4eba-48c9-beb9-994356e099ab.png)
+
+#api-docs
+![Screenshot (2713)](https://user-images.githubusercontent.com/112753795/236665104-7cf301f7-c2ca-45ca-9318-d13a5d18163b.png)
